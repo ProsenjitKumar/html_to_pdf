@@ -1,3 +1,5 @@
+import datetime
+
 from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views.generic import View
@@ -14,7 +16,7 @@ class GeneratePdf(View):
             'invoice_id': 91199,
             'customer_name': 'Prosenjit Kumar',
             'amount': 99.21,
-            'today': "Today",
+            'today': datetime.time,
         }
         html = template.render(context)
         pdf = render_to_pdf('pdf/invoice.html', context)
